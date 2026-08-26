@@ -2,6 +2,8 @@
 
 中山大学智能工程学院竞赛信息与经验共享平台。前端及 API 使用 Next.js，Vercel 负责部署，Supabase Database 保存社区数据，Supabase Storage 保存投稿附件。
 
+欢迎通过投稿页面补充竞赛信息、参赛经验与相关作品。
+
 ## 本地开发
 
 需要 Node.js 20.9 或更高版本。
