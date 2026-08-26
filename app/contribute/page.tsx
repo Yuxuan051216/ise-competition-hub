@@ -1,0 +1,2 @@
+import { ExperienceForm } from "@/components/ExperienceForm";
+export default async function Contribute({searchParams}:{searchParams:Promise<{type?:string;competition?:string}>}){const params=await searchParams;return <><section className="page-hero compact"><div className="shell"><span className="kicker">SHARE YOUR EXPERIENCE</span><h1>分享参赛经验与项目</h1><p>无需注册或登录。填写获奖等级、经验介绍并上传你有权公开的文件，提交后会立即显示在对应竞赛的“过来人的项目参考”中。</p></div></section><section className="section"><ExperienceForm initialCompetition={params.competition}/></section></>}

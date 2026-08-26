@@ -1,0 +1,11 @@
+.next
+node_modules
+.env*.local
+*.log
+.runtime
+.env
+out/
+.vercel/
+*.tsbuildinfo
+public/uploads/
+data/community.json

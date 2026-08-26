@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next"; import { competitions } from "@/lib/competitions";
+export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000";return ["","/competitions","/calendar","/stories","/funding","/guide","/about","/contact","/contributors","/contribute"].map(url=>({url:`${base}${url}`,lastModified:new Date()})).concat(competitions.map(c=>({url:`${base}/competitions/${c.slug}`,lastModified:new Date()})))}

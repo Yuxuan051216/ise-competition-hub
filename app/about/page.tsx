@@ -1,0 +1,2 @@
+import { Database, HeartHandshake, ShieldCheck, Target } from "lucide-react"; import { InfoPage } from "@/components/InfoPage";
+export default function About(){return <InfoPage kicker="ABOUT THE HUB" title="关于本站" intro="这是一个由学生自发建设、共同维护、共同受益的非官方竞赛信息与经验共享平台。" items={[{icon:Target,title:"为什么建设",text:"降低竞赛信息差，让第一次参赛的同学更容易找到清晰、可信的起点。"},{icon:Database,title:"信息从哪里来",text:"优先采用赛事官网、主办方通知与学院正式文件；无法核验的内容明确留白。"},{icon:HeartHandshake,title:"如何共同维护",text:"欢迎分享经验、作品、链接与纠错。投稿需有分享权，并在公开前经过审核。"},{icon:ShieldCheck,title:"非官方声明",text:"本站与中山大学及智能工程学院官方机构无隶属关系，正式事项请以官方通知为准。"}]}/>}

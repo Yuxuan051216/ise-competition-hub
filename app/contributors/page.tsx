@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { Heart, Sparkles } from "lucide-react";
+import { allContributors } from "@/lib/local-community";
+export const dynamic="force-dynamic";
+export default async function Contributors(){const contributors=await allContributors();return <><section className="contributors-hero"><div className="shell"><Sparkles/><span>OUR CONTRIBUTORS</span><h1>特别鸣谢：</h1><p>感谢每一位愿意留下经验、作品与建议的同学。正因为这些真实而慷慨的分享，这里才能成为一份不断生长的共同记忆。</p></div></section><section className="section contributors-body"><div className="shell">{contributors.length?<div className="contributor-list">{contributors.map((person,index)=><article key={person.name}><span>{String(index+1).padStart(2,"0")}</span><div><h2>{person.name}</h2><p>贡献 {person.count} 次 · 首次分享于 {new Date(person.firstContribution).toLocaleDateString("zh-CN")}</p></div><Heart/></article>)}</div>:<div className="empty contributor-empty"><Heart/><h2>特别鸣谢每一位即将留下名字的你</h2><p>目前还没有署名贡献者。分享参赛经验时填写姓名，你的名字就会自动出现在这里。</p><Link className="button" href="/contribute?type=experience">分享经验并加入名单</Link></div>}</div></section></>}

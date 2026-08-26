@@ -1,0 +1,2 @@
+import { CalendarBoard } from "@/components/CalendarBoard";
+export default function Calendar(){return <><section className="page-hero compact"><div className="shell"><span className="kicker">LIVE COMPETITION CALENDAR</span><h1>竞赛日历</h1><p>按需从 29 项赛事官网检索当前年度日程。点击“检查当前年度时间”查看自动提取结果；最终安排始终以官网原文为准。</p></div></section><section className="section library"><div className="shell"><CalendarBoard/></div></section></>}
