@@ -1,0 +1,4 @@
+import { NextResponse } from "next/server";
+import { getSupabaseAdmin } from "@/lib/supabase/admin";
+export const runtime="nodejs";export const dynamic="force-dynamic";
+export async function GET(_:Request,{params}:{params:Promise<{id:string}>}){const{id}=await params;if(!/^[0-9a-f-]{36}$/i.test(id))return NextResponse.json({error:"无效文件"},{status:400});const admin=getSupabaseAdmin();if(!admin)return NextResponse.json({error:"文件服务尚未配置"},{status:503});const result=await admin.from("submission_files").select("storage_path,submissions!inner(status)").eq("id",id).eq("submissions.status","approved").maybeSingle();if(result.error||!result.data)return NextResponse.json({error:"文件不存在或尚未通过审核"},{status:404});const signed=await admin.storage.from("submission-files").createSignedUrl(result.data.storage_path,60);if(signed.error)return NextResponse.json({error:"暂时无法生成下载链接"},{status:500});return NextResponse.redirect(signed.data.signedUrl,{status:307})}
