@@ -61,7 +61,7 @@ GITHUB_TOKEN=
 2. 服务器校验 slug、字段长度、邮箱及文件扩展名/MIME/大小。
 3. 留言写入 `discussion_messages`；投稿写入 `submissions`，邮箱写入私有的 `submission_contacts`，文件写入 Private Storage，metadata 写入 `submission_files`。
 4. 网站公开查询只返回 `approved` 内容。
-5. 审核通过的附件由 `/api/submission-files/[id]` 验证投稿状态后生成 60 秒 Signed URL，不提供永久公开 URL。
+5. 审核通过的附件由 `/api/submission-files/[id]` 验证投稿状态后生成 60 秒 Signed URL，不会提供永久公开 URL。
 
 ### 第一版管理审核
 
