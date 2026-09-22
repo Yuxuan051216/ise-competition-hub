@@ -74,7 +74,7 @@ GITHUB_TOKEN=
 
 管理员角色只能由 Dashboard/SQL Editor 中的可信操作设置：
 
-```sql
+```
 update public.profiles set role = 'admin' where id = 'USER_UUID';
 ```
 
